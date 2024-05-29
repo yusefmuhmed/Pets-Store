@@ -10,6 +10,11 @@ export class PetsResolver {
     async pets() {
         return await this.petsService.findAll();
     }
+
+    @Query( returns => [Pet])
+    async createPets(pet : Pet) {
+        return await this.petsService.createOnePet(pet);
+    }
 }
 
 

@@ -12,4 +12,5 @@ type Pet {
 
 type Query {
   pets: [Pet!]!
+  createPets: [Pet!]!
 }
