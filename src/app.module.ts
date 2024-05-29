@@ -1,12 +1,19 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserModule } from './user/user.module';
-import { CommentModule } from './comment/comment.module';
-import { TopicModule } from './topic/topic.module';
+import { PetsModule } from './pets/pets.module';
+import { GraphQLModule } from '@nestjs/graphql';
+import { join } from 'path';
 
 @Module({
-  imports: [UserModule, CommentModule, TopicModule],
+  imports: [
+    GraphQLModule.forRoot({
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      playground: true,
+      introspection: true,
+      context: ({ req, res }) => ({ req, res }),
+    }), 
+    PetsModule],
   controllers: [AppController],
   providers: [AppService],
 })
