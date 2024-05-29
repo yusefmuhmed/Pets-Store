@@ -5,12 +5,11 @@ import { PetsModule } from './pets/pets.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { ApolloDriverConfig, ApolloDriver } from '@nestjs/apollo';
-
 @Module({
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      autoSchemaFile: join(process.cwd(), '../src/schema.gql'),
+      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
     }),
     PetsModule,
   ],
