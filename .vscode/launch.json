@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [{
         "name": "Launch Program",
-        "program": "${workspaceFolder}/main.ts",
+        "program": "${workspaceFolder}/src/main.ts",
         "request": "launch",
         "skipFiles": [
             "<node_internals>/**"
