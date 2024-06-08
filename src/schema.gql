@@ -16,5 +16,10 @@ type Query {
 }
 
 type Mutation {
-  createPets: [Pet!]!
+  createPet(createPetInput: CreatePetInput!): Pet!
+}
+
+input CreatePetInput {
+  name: String!
+  type: String
 }
