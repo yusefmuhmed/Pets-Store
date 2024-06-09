@@ -11,8 +11,11 @@ type Pet {
 }
 
 type Owner {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  id: Int!
+  name: String!
+
+  """Pet type"""
+  type: String
 }
 
 type Query {
