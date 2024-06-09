@@ -12,13 +12,9 @@ export class PetsResolver {
         return await this.petsService.findAll();
     }
 
-    @Mutation( returns => Pet)
-    async createPet(@Args('createPetInput') createPetInput : CreatePetInput) {
-        return await this.petsService.createOnePet(createPetInput);
-    }
-    @Query( returns => Pet)
-    async getPet(@Args('id', {type: () => Int}) id: number){
-        return await this.petsService.findOne(id);
+    @Query( returns => [Pet])
+    async createPets(pet : Pet) {
+        return await this.petsService.createOnePet(pet);
     }
 
 
